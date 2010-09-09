@@ -1,0 +1,33 @@
+<%= form_for(@crit_requirement) do |f| %>
+  <% if @crit_requirement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@crit_requirement.errors.count, "error") %> prohibited this crit_requirement from being saved:</h2>
+
+      <ul>
+      <% @crit_requirement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :crit_id %><br />
+    <%= f.text_field :crit_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

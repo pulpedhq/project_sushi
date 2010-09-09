@@ -1,0 +1,27 @@
+<h1>Listing crit_notes</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Crit</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @crit_notes.each do |crit_note| %>
+  <tr>
+    <td><%= crit_note.id %></td>
+    <td><%= crit_note.name %></td>
+    <td><%= crit_note.crit_id %></td>
+    <td><%= link_to 'Show', crit_note %></td>
+    <td><%= link_to 'Edit', edit_crit_note_path(crit_note) %></td>
+    <td><%= link_to 'Destroy', crit_note, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Crit note', new_crit_note_path %>

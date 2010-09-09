@@ -1,0 +1,118 @@
+/* new clearfix */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+/* Application Layout Styles */
+
+body {
+	font-family:"hoefler text alt";
+	font-size:14pt;
+}
+
+#wrap {
+	margin:auto;
+	width:960px;
+}
+
+#logo {
+	margin:auto;
+	display:block;
+	margin-top:20px;
+}
+
+#main {
+	padding-top:60px;
+}
+
+/* Projects Listing Styles */
+
+#projects_list {
+	
+}
+
+#projects_list > li {
+	display:block;	
+	margin: 5px 0;
+	float:left;
+	clear:both;
+	-moz-border-radius:10px;
+	border:1px solid #bbb;
+	background-color:#fff;
+}
+
+#projects_list > li:hover {
+	background-color:#ccc;
+}
+
+.project {
+	
+}
+
+.project li {
+	float:left;	
+	clear:none !important;
+}
+
+.project_details {
+	padding-top:9px;
+}
+
+.project_details:hover {
+	
+}
+
+.project_details li {
+	float:left;
+	clear:none !important;
+	padding:0 10px;
+}
+
+.icon {
+	vertical-align:middle;
+	padding-top:3px;
+	padding-left:7px;
+	padding-right:7px;
+}
+
+.flash_message {
+	display:inline;
+	padding:5px;
+	background-color:#ccc;
+	border:1px solid #ddd;
+	margin:10px 0;
+	clear:both;
+	float:left;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+.projects {
+	clear:both;
+}
+
+.user_links {
+	float:right;
+	padding-right:10px;
+}
+
+.user_links li {
+	float:left;
+	margin:0 10px;
+	padding:5px;
+	background-color:#ddd;
+}
+.topbar {
+	background-color:#CCCCCC;
+	padding:10px;
+	width:100%;
+}
+
+

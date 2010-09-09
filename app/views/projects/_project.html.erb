@@ -1,0 +1,14 @@
+<li>
+	<ul class="project">
+	<li>
+		<ul class="project_details clearfix">
+			<li><%= link_to project.name, project %></li>
+			<li>Deadline: <%= project.deadline %></li>
+			<li><%= project.status %></li>
+		</ul>
+	</li>
+	<li class="icon">
+		<%= link_to (image_tag "icons/delete.png"), project, :remote => true, :method => :delete %>
+	</li>
+	</ul><!-- End Project -->
+</li>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @brief.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @brief.name %>
+</p>
+
+<p>
+  <b>File url:</b>
+  <%= @brief.file_url %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%= @brief.project_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_brief_path(@brief) %> |
+<%= link_to 'Back', briefs_path %>

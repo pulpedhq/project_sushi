@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @crit_requirement.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @crit_requirement.name %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @crit_requirement.status %>
+</p>
+
+<p>
+  <b>Crit:</b>
+  <%= @crit_requirement.crit_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_crit_requirement_path(@crit_requirement) %> |
+<%= link_to 'Back', crit_requirements_path %>

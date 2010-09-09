@@ -1,0 +1,29 @@
+<h1>Listing crit_requirements</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Crit</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @crit_requirements.each do |crit_requirement| %>
+  <tr>
+    <td><%= crit_requirement.id %></td>
+    <td><%= crit_requirement.name %></td>
+    <td><%= crit_requirement.status %></td>
+    <td><%= crit_requirement.crit_id %></td>
+    <td><%= link_to 'Show', crit_requirement %></td>
+    <td><%= link_to 'Edit', edit_crit_requirement_path(crit_requirement) %></td>
+    <td><%= link_to 'Destroy', crit_requirement, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Crit requirement', new_crit_requirement_path %>

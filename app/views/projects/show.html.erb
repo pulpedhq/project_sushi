@@ -1,0 +1,52 @@
+<div class="flash_message" style="display:none">
+</div>
+
+<%= link_to "Back to Your Projects", :action => "index" %>
+
+<p>
+  <b>Project:</b>
+  <%= @project.name %>
+</p>
+<p>
+  <b>Deadline:</b>
+  <%= @project.deadline %>
+</p>
+<p>
+  <b>Status:</b>
+  <%= @project.status %>
+</p>
+<hr />
+
+<% if @tasks.empty? %>
+	<div class="projects clearfix">
+		<h2 class='no-projects'>Looks like you don't have any tasks, let's create a new one!</h2>
+		<ul id="projects_list">
+			
+		</ul><!-- End ProjectsList -->
+	</div>
+<% else %>
+
+	<div class="projects clearfix">
+		<h2><%= pluralize(@quantity, 'Task') + ":" %></h2>
+		<ul id="projects_list">
+			<%= render :partial => 'task', :collection => @tasks %>	
+		</ul><!-- End ProjectsList -->			
+	</div><!-- End Projects -->
+<% end %>
+
+<h1>Add new task</h1>
+
+<%= form_for(@task, :remote => true, :as => :task, :url => {:controller => "tasks"}, :html => {:class => "add_project_form"}) do |f| %>
+	<label for="name">Title:</label>
+	<p><%= f.text_field :name %></p>
+	<label for="deadline">Priority:</label>
+	<p><%= f.text_field :priority %></p>
+	<%= f.hidden_field :status, :value => "Active" %>
+	<%= f.hidden_field :project_id, :value => @project.id %>
+	<%= submit_tag 'Add Project' %>
+<% end %>
+
+<!--
+<%= link_to 'Edit', edit_project_path(@project) %> 
+<%= link_to 'Back', projects_path %>
+-->

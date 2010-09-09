@@ -1,0 +1,22 @@
+<script type="text/javascript">
+	$(function() {
+		$("#datepicker").datepicker();
+	});
+	</script>
+
+<%= form_for(@project, :remote => true, :as => :project, :url => {:controller => "projects"}, :html => {:class => "add_project_form"}) do |f| %>
+	<label for="name">Title:</label>
+	<p><%= f.text_field :name %></p>
+	<label for="deadline">Deadline:</label>
+	<p><%= f.text_field :deadline, :id => "datepicker" %></p>
+	<%= f.hidden_field :status, :value => "Active" %>
+	<%= f.hidden_field :user_id, :value => @user_id %>
+	<%= submit_tag 'Add Project' %>
+<% end %>
+
+<div id="errors">
+	<% if @errors %>
+		<%= @errors %>
+	<% end %>
+</div>
+

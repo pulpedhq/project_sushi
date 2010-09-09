@@ -1,0 +1,12 @@
+$(".flash_message").show();
+$(".flash_message").html("Task Successfuly destroyed");
+
+$("#projects_list").html('<%= escape_javascript( render(:partial => "projects/task", :collection => @tasks) ) %>');
+
+<% if @quantity == 0 %>
+$(".projects > h2").html("You have no tasks, create some now");
+<% else %>
+$(".projects > h2").html('<%= escape_javascript(pluralize(@quantity, "Task") + ":") %>');
+<% end %>
+
+<% flash.discard %>

@@ -1,0 +1,27 @@
+//Hides the message that you have no projects
+
+$(".no-projects").hide(500);
+
+//Shows message: "project successfully created"
+
+$(".flash_message").show();
+
+$(".flash_message").html("Task Successfuly Created");
+
+//Renders partial containing new project and appends to list
+
+$("#projects_list").append('<%= escape_javascript( render(:partial => "projects/task", :collection => @last_task) ) %>');
+
+//Flashes new project
+
+$("#projects_list > li:last-child").animate({ backgroundColor: "#ccc" }, 'fast', function() {
+	$("#projects_list > li:last-child").animate({ backgroundColor: "white" }, 'fast');
+});
+
+//updates project quantity
+
+<% if @quantity == 0 %>
+alert('no tasks');
+<% else %>
+$(".projects > h2").html('<%= escape_javascript(pluralize(@quantity, "Task") + ":") %>');
+<% end %>

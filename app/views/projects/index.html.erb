@@ -1,0 +1,26 @@
+<div class="flash_message" style="display:none">
+</div>
+
+
+<% if @projects.empty? %>
+	<div class="projects clearfix">
+		<h2 class='no-projects'>Looks like you don't have any projects, let's create a new one!</h2>
+		<ul id="projects_list">
+			
+		</ul><!-- End ProjectsList -->
+	</div>
+<% else %>
+
+	<div class="projects clearfix">
+		<h2><%= pluralize(@quantity, 'Project') + ":" %></h2>
+		<ul id="projects_list">
+			<%= render :partial => 'project', :collection => @projects %>	
+		</ul><!-- End ProjectsList -->			
+	</div><!-- End Projects -->
+<% end %>
+
+<hr />
+
+<h2>Create a New Project</h2>
+
+<%= render :partial => 'form' %>

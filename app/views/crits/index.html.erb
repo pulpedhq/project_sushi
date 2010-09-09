@@ -1,0 +1,27 @@
+<h1>Listing crits</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Project</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @crits.each do |crit| %>
+  <tr>
+    <td><%= crit.id %></td>
+    <td><%= crit.name %></td>
+    <td><%= crit.project_id %></td>
+    <td><%= link_to 'Show', crit %></td>
+    <td><%= link_to 'Edit', edit_crit_path(crit) %></td>
+    <td><%= link_to 'Destroy', crit, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Crit', new_crit_path %>
